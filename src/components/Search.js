@@ -1,24 +1,22 @@
 import React from "react"
+import "../style/style.css";
+import Container from "../components/Container";
+import Col from "../components/Col";
+import Row from "../components/Row";
+
 
 function Search(props) {
 
     return (
-        <div className="container-fluid">
-
-
+        <Container>
             <header className="z-depth-3 col s12" >
-                <div className="row">
-
-                    <div className="col s6">
-
-
-
-                        <h3>Employee Directory</h3>
-
-                    </div>
-                    <div className="col s6 ">
-
-                        <div className="col s6">
+                <Row>
+                    <Col size="md-6" >
+                        <h1>Employee Directory</h1>
+                        <p>Use The Search Box To Narrow Search!</p>
+                    </Col>
+                     <Col size="md-12" >
+                        <Col size="md-12" >
 
                             <input
                                 onChange={props.handleInputChange}
@@ -29,8 +27,8 @@ function Search(props) {
                                 list="employee"
                                 className=" inputBox "
                                 placeholder="Search by name" />
-                        </div>
-                        <div className="col m4">
+                        </Col>
+                        {/* <div className="col m4">
                             <button
                                 type="submit"
                                 value=""
@@ -39,11 +37,11 @@ function Search(props) {
                                 >
                                 Search
                             </button>
-                        </div>
-                    </div>
-                </div>
+                        </div> */}
+                    </Col>
+                </Row>
             </header>
-        </div >
+        </Container>
     )
 }
 

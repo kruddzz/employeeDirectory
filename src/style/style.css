@@ -1,0 +1,53 @@
+body {
+    background-color: #ffffff
+    
+}
+
+table{
+     margin-top: 15px;
+ }
+
+th {  
+    font-size: 17px;
+    letter-spacing: 1px;
+    font-family: 'Inria Serif', serif;
+    color: black;
+    cursor: pointer;
+}
+
+header {
+    letter-spacing: 1px;
+    font-family: 'Inria Serif', serif;
+    padding: 30px 0;
+    color: #ffffff;
+    background-color: #101D42;
+    width: 100%;
+    text-align: center;
+    border-bottom: 5px solid #DB162F;
+    margin-bottom: 10px;
+}
+.email {
+    color:rgb(28, 28, 235);
+    font-size: 15px;   
+}
+
+img {
+    border-radius: 50%;  
+    box-shadow: black 1px 1px 8px;  
+ }
+
+input { 
+color: gray !important;  
+}
+ .employeeTable{
+     width: 75%;
+     margin: 0 auto;
+     padding: 0px;
+     font-family: 'Catamaran', sans-serif;
+ }
+  td {
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      font-family: 'Catamaran', sans-serif;
+      font-weight: bold;
+  }
