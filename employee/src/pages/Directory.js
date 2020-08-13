@@ -3,12 +3,43 @@ import API from "../utils/API";
 
 class Directory extends Component {
     state ={
-        users: [],
-        order: "descend",
-        filteredUsers: [],
-        headings: []
+        employees: [],
+        order: "",
+        filteredEmployees: [],
+        search: ""
     }
 
+    componentDidMount() {
+        API.getUsers().then(res => this.setState({ 
+            employees: res.data.results,
+            filteredEmployees: res.data.results
+        })
+        )
+        .catch(err => console.log(err))
+    }
+    
+    sortByName = () => {
+        const filter = this.state.filteredEmployees;
+        if (this.state.order === "asc") {
+            const sorts = filter.sort((a, b) => (a.name.first > b.name.first) ? 1 : -1)
+            console.log(sorts)
+
+            this.setState({
+                filteredEmployees: sorts,
+                order: "desc"
+            })
+        } else {
+
+            const sorts = filter.sort((a, b) => (a.name.first > b.name.first) ? -1 : 1)
+            console.log(sorts)
+
+            this.setState({
+                filteredEmployees: sorts,
+                order: "asc"
+            })
+
+        }
+    }
 }
 
 export default Directory;
