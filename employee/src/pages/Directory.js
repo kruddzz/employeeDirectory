@@ -42,6 +42,24 @@ class Directory extends Component {
 
         }
     }
+
+    handleInputChange = event => {
+
+        const employees = this.state.employees;
+        const UserInput = event.target.value;
+        const filteredEmployees = employees.filter(employee => employee.name.first.toLowerCase().indexOf(UserInput.toLowerCase()) > -1
+        )
+        this.setState({
+            //change the state of  filteredEmployes now it holds all the employes that matches users
+            // search and will be passed down in this state
+
+            filteredEmployees,
+
+        });
+
+
+    };
+    
     render() {
 
         return (
