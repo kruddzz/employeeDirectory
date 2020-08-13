@@ -12,70 +12,62 @@ class Directory extends Component {
     }
 
     componentDidMount() {
-        API.getUsers().then(res => this.setState({ 
-            employees: res.data.results,
-            filteredEmployees: res.data.results
-        })
-        )
-        .catch(err => console.log(err))
+        this.employeeSearch();
     }
     
     sortByName = () => {
         const filter = this.state.filteredEmployees;
         if (this.state.order === "asc") {
             const sorts = filter.sort((a, b) => (a.name.first > b.name.first) ? 1 : -1)
-            console.log(sorts)
+            // console.log(sorts)
 
             this.setState({
                 filteredEmployees: sorts,
                 order: "desc"
             })
         } else {
-
             const sorts = filter.sort((a, b) => (a.name.first > b.name.first) ? -1 : 1)
-            console.log(sorts)
+            // console.log(sorts)
 
             this.setState({
                 filteredEmployees: sorts,
                 order: "asc"
             })
-
         }
     }
 
     handleInputChange = event => {
-
         const employees = this.state.employees;
         const UserInput = event.target.value;
         const filteredEmployees = employees.filter(employee => employee.name.first.toLowerCase().indexOf(UserInput.toLowerCase()) > -1
         )
         this.setState({
-            //change the state of  filteredEmployes now it holds all the employes that matches users
-            // search and will be passed down in this state
-
             filteredEmployees,
-
         });
-
-
     };
-    
-    render() {
 
+    employeeSearch = () => {
+        API.getUsers().then(res => this.setState({
+                filteredEmployees: res.data.results,
+                employees: res.data.results
+            })
+            )
+            .catch(err => console.log(err))
+    }
+
+
+
+    render() {
         return (
             <div>
-
                 <Search
                     employee={this.state.employees}
                     handleSearch={this.handleSearch}
                     handleInputChange={this.handleInputChange} />
                 <DataArea results={this.state.filteredEmployees}
                     sortByName={this.sortByName}
-
                 />
             </div >
-
-
         )
     }
 }
