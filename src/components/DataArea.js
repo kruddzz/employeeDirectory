@@ -1,6 +1,6 @@
 import React from "react";
 import Moment from 'react-moment';
-import "../style/style.css";
+import "./style.css";
 
 function DataArea(props) {
       return (

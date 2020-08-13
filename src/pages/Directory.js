@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import Search from "../components/Search"
 import DataArea from "../components/DataArea"
-import "../style/style.css";
+import "../components/style.css";
 
 class Directory extends Component {
     state ={
