@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
+import Search from "../components/Search"
 
 class Directory extends Component {
     state ={
