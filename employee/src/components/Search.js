@@ -13,12 +13,12 @@ function Search(props) {
 
 
 
-                        <h3 className="right-align headerText">Employee Directory</h3>
+                        <h3>Employee Directory</h3>
 
                     </div>
                     <div className="col s6 ">
 
-                        <div className="col s6 inputAndButton right-align ">
+                        <div className="col s6">
 
                             <input
                                 onChange={props.handleInputChange}
