@@ -39,7 +39,10 @@ class Directory extends Component {
     handleInputChange = event => {
         const employees = this.state.employees;
         const UserInput = event.target.value;
-        const filteredEmployees = employees.filter(employee => employee.name.first.toLowerCase().indexOf(UserInput.toLowerCase()) > -1
+        const filteredEmployees = employees.filter(employee => 
+            employee.name.first.toLowerCase().indexOf(UserInput.toLowerCase()) > -1 ||
+            employee.name.last.toLowerCase().indexOf(UserInput.toLowerCase()) > -1 
+            || employee.email.toLowerCase().indexOf(UserInput.toLowerCase()) > -1
         )
         this.setState({
             filteredEmployees,
@@ -55,14 +58,12 @@ class Directory extends Component {
             .catch(err => console.log(err))
     }
 
-
-
     render() {
         return (
             <div>
                 <Search
                     employee={this.state.employees}
-                    handleSearch={this.handleSearch}
+                    // handleSearch={this.handleSearch}
                     handleInputChange={this.handleInputChange} />
                 <DataArea results={this.state.filteredEmployees}
                     sortByName={this.sortByName}

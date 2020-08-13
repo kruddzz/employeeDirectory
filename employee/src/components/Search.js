@@ -35,7 +35,8 @@ function Search(props) {
                                 type="submit"
                                 value=""
                                 className=" btn z-depth-2 waves-effect  searchBttn"
-                                onClick={props.handleSearch} >
+                                // onClick={props.handleSearch} 
+                                >
                                 Search
                             </button>
                         </div>
