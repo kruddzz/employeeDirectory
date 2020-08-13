@@ -40,6 +40,24 @@ class Directory extends Component {
 
         }
     }
+    render() {
+
+        return (
+            <div>
+
+                <Search
+                    employee={this.state.employees}
+                    handleSearch={this.handleSearch}
+                    handleInputChange={this.handleInputChange} />
+                <DataArea results={this.state.filteredEmployees}
+                    sortByName={this.sortByName}
+
+                />
+            </div >
+
+
+        )
+    }
 }
 
 export default Directory;
